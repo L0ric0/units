@@ -15,20 +15,16 @@
 #include <boost/units/physical_dimensions/energy.hpp>
 
 namespace boost {
+    namespace units {
+        namespace au {
 
-namespace units { 
+            typedef unit<energy_dimension, au::system> energy;
 
-namespace au {
+            BOOST_UNITS_STATIC_CONSTANT(hartree, energy);
+            BOOST_UNITS_STATIC_CONSTANT(hartre, energy);
 
-typedef unit<energy_dimension,au::system>   energy;
-    
-BOOST_UNITS_STATIC_CONSTANT(hartree,energy);
-BOOST_UNITS_STATIC_CONSTANT(hartre,energy);
-
-} // namespace au
-
-} // namespace units
-
-} // namespace boost
+        }
+    }
+}
 
 #endif // BOOST_UNITS_AU_ENERGY_HPP

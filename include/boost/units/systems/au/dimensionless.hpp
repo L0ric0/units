@@ -14,17 +14,13 @@
 #include <boost/units/systems/au/base.hpp>
 
 namespace boost {
+    namespace units {
+        namespace au {
 
-namespace units { 
+BOOST_UNITS_STATIC_CONSTANT(au_dimensionless, dimensionless);
 
-namespace au {
-
-BOOST_UNITS_STATIC_CONSTANT(au_dimensionless,dimensionless);
-
-} // namespace au
-
-} // namespace units
-
-} // namespace boost
+        }
+    }
+}
 
 #endif // BOOST_UNITS_AU_DIMENSIONLESS_HPP
