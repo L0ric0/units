@@ -7,27 +7,26 @@
 // accompanying file LICENSE_1_0.txt or copy at
 // http://www.boost.org/LICENSE_1_0.txt)
 
-#ifndef BOOST_UNITS_AU_BOLTZMANN_BASE_UNIT_HPP
-#define BOOST_UNITS_AU_BOLTZMANN_BASE_UNIT_HPP
+#ifndef BOOST_UNITS_AU_CURRENT_BASE_UNIT_HPP
+#define BOOST_UNITS_AU_CURRENT_BASE_UNIT_HPP
 
 #include <string>
 
 #include <boost/units/config.hpp>
 #include <boost/units/base_unit.hpp>
-#include <boost/units/physical_dimensions/temperature.hpp>
-#include <boost/units/base_units/si/kelvin.hpp>
+#include <boost/units/physical_dimensions/current.hpp>
+#include <boost/units/base_units/si/ampere.hpp>
 #include <boost/units/conversion.hpp>
 
-BOOST_UNITS_DEFINE_BASE_UNIT_WITH_CONVERSIONS(au, boltzmann, "boltzmann", "k_b", 1.380649e-23, si::kelvin_base_unit, 301); // exact conversion
+
+BOOST_UNITS_DEFINE_BASE_UNIT_WITH_CONVERSIONS(au, current, "current", "cur", 6.623618237510e-3, si::ampere_base_unit, 302);
 
 #if BOOST_UNITS_HAS_BOOST_TYPEOF
 
 #include BOOST_TYPEOF_INCREMENT_REGISTRATION_GROUP()
 
-BOOST_TYPEOF_REGISTER_TYPE(boost::units::au::boltzmann_base_unit)
+BOOST_TYPEOF_REGISTER_TYPE(boost::units::au::current_base_unit)
 
 #endif
 
-//#include <boost/units/base_units/detail/conversions.hpp>
-
-#endif // BOOST_UNITS_AU_BOLTZMANN_BASE_UNIT_HPP
+#endif // BOOST_UNITS_AU_CURRENT_BASE_UNIT_HPP

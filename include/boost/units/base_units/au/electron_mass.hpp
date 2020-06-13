@@ -15,24 +15,11 @@
 #include <boost/units/config.hpp>
 #include <boost/units/base_unit.hpp>
 #include <boost/units/physical_dimensions/mass.hpp>
+#include <boost/units/base_units/cgs/gram.hpp>
+#include <boost/units/conversion.hpp>
 
-namespace boost {
-
-namespace units {
-
-namespace au {
-
-struct electron_mass_base_unit : public base_unit<electron_mass_base_unit, mass_dimension, 303>
-{
-    static std::string name()    { return("electron_mass"); }
-    static std::string symbol() { return("m_e"); }
-};
-
-} // namespace au
-
-} // namespace units
-
-} // namespace boost
+//e-28 as we convert from gram and not kilogram
+BOOST_UNITS_DEFINE_BASE_UNIT_WITH_CONVERSIONS(au, electron_mass, "electron_mass", "m_e", 9.1093837015e-28, cgs::gram_base_unit, 303);
 
 #if BOOST_UNITS_HAS_BOOST_TYPEOF
 
@@ -41,7 +28,5 @@ struct electron_mass_base_unit : public base_unit<electron_mass_base_unit, mass_
 BOOST_TYPEOF_REGISTER_TYPE(boost::units::au::electron_mass_base_unit)
 
 #endif
-
-//#include <boost/units/base_units/detail/conversions.hpp>
 
 #endif // BOOST_UNITS_AU_ELECTRON_MASS_BASE_UNIT_HPP
